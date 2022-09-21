@@ -1,0 +1,66 @@
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "miniprogram-template",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "resolveAlias": {
+    "~/*": "/*"
+  },
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-button": "@vant/weapp/button/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "custom-broken-network": "/components/custom-broken-network/index",
+    "custom-image": "/components/custom-image/index",
+    "custom-iconfont": "/components/custom-iconfont/index",
+    "custom-article": "/components/custom-article/index",
+    "custom-nomore": "/components/custom-nomore/index",
+    "custom-more": "/components/custom-more/index",
+    "custom-html": "/components/custom-html/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "pages": ["pages/home/index", "pages/goods/index", "pages/user/index", "pages/message/index"],
+  "subPackages": [
+    {
+      "root": "packageA",
+      "name": "packageA",
+      "pages": ["article-detail/index"]
+    }
+  ],
+  "tabBar": {
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "assets/images/tabbar/home.png",
+        "selectedIconPath": "/assets/images/tabbar/selected-home.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/goods/index",
+        "iconPath": "assets/images/tabbar/goods.png",
+        "selectedIconPath": "/assets/images/tabbar/selected-goods.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/message/index",
+        "iconPath": "assets/images/tabbar/message.png",
+        "selectedIconPath": "/assets/images/tabbar/selected-message.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "assets/images/tabbar/user.png",
+        "selectedIconPath": "/assets/images/tabbar/selected-user.png",
+        "text": ""
+      }
+    ]
+  }
+}

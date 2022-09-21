@@ -1,0 +1,42 @@
+/* packageA/article-detail/index.wxss */
+.header {
+  padding: 40rpx;
+  background-color: #ffffff;
+}
+
+.article-title {
+  padding-bottom: 40rpx;
+  font-size: 48rpx;
+  font-weight: 600;
+}
+
+.author-info-block {
+  display: flex;
+  align-items: center;
+  padding-bottom: 40rpx;
+}
+
+.avatar-link {
+  font-size: 0;
+  padding-right: 20rpx;
+}
+
+.author-info-box {
+  flex: 1;
+}
+
+.author-name {
+  font-weight: 500;
+  font-size: 32rpx;
+}
+
+.meta-box {
+  font-size: 24rpx;
+  color: #8a919f;
+}
+
+.follow {
+  padding: 10rpx 20rpx;
+  border: 2rpx solid #031c24;
+  border-radius: 10rpx;
+}

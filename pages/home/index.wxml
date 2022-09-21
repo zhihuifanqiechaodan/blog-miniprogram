@@ -1,0 +1,46 @@
+<!--pages/home/index.wxml-->
+<view class="app-container">
+	<custom-nav-bar isSlot="{{true}}" placeholder="{{true}}" title="{{title}}" customStyle="background: rgba(255, 255, 255, 1)" />
+
+	<!-- banner -->
+	<view class="banner-wrapper">
+		<!-- 欢迎语 -->
+		<view class="title-welcome">
+			<view class="color-secondary">
+				<text>Hi, there</text>
+				<custom-image src="https://nepro.orinostudio.com/preview/assets/img/1f590.png" width="40rpx" height="40rpx" />
+			</view>
+			<text class="welcome-watch">Enjoy Watching!</text>
+		</view>
+
+		<!-- 轮播图 -->
+		<view class="swiper-wrapper">
+			<swiper bindchange="swiperChange" current="1" circular autoplay previous-margin="40rpx" next-margin="40rpx" style="height: 320rpx;">
+				<block wx:for="{{3}}" wx:key="index">
+					<swiper-item class="swiper-item">
+						<custom-image src="https://nepro.orinostudio.com/preview/assets/img/home/fsadf564.jpg" width="{{currentIndex === index ? '640rpx' : '100vw'}}" height="320rpx" radius="20rpx" />
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+	</view>
+
+	<!-- 文章 -->
+	<view class="article-wrapper">
+		<!-- 文章提示 -->
+		<view class="sort-title">
+			<custom-iconfont icon="icon-hot-fill" size="48rpx" external-iconfont="new-gradient-anime" />
+			<text class="latest-article">热门文章</text>
+		</view>
+
+		<view class="article-list">
+			<block wx:for="{{articles}}" wx:key="id">
+				<custom-article articleInfo="{{item}}" />
+			</block>
+			<custom-nomore />
+		</view>
+	</view>
+
+</view>
+
+<van-toast id="van-toast" />

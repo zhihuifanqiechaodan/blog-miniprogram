@@ -1,0 +1,51 @@
+/* pages/user/index.wxss */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background-color: #ffffff;
+}
+
+.info-box {
+  padding: 20rpx 0;
+  text-align: center;
+}
+
+.top {
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.divider {
+  padding: 0 10rpx;
+}
+
+.intro {
+  padding-top: 20rpx;
+}
+
+.stat-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+}
+
+.stat-item {
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.count {
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.desc {
+  opacity: 0.5;
+  font-size: 24rpx;
+}
