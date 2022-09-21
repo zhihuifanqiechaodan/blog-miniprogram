@@ -1,0 +1,10 @@
+/* pages/home/components/banner/index.wxss */
+.banner {
+  padding: 40rpx 0;
+  background-color: #ffffff;
+
+  .swiper-item-active {
+    display: flex;
+    justify-content: center;
+  }
+}

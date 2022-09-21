@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-welcome": "./components/welcome/index",
+    "my-banner": "./components/banner/index",
+    "my-article-list": "./components/article-list/index"
+  }
 }

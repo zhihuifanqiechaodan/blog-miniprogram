@@ -1,0 +1,5 @@
+<!--pages/home/components/welcome/index.wxml-->
+<view class="welcome">
+  <view class="color-secondary">Hi, there 🖐️</view>
+  <view class="enjoy-watching">Enjoy Watching!</view>
+</view>

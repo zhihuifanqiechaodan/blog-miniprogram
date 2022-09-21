@@ -1,14 +1,15 @@
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
 @import '/assets/styles/vant-variables.wxss';
 @import '/assets/styles/swiper.wxss';
-@import '/assets/styles/iconfont.wxss';
 
 page {
+  padding-bottom: calc(env(safe-area-inset-bottom));
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC',
     'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   font-size: 28rpx;
   font-weight: 300;
   color: #031c24;
-  background-color: #f4f5f5;
+  background-color: #ffffff;
 }
 
 view,

@@ -1,0 +1,56 @@
+/* pages/home/components/article-list/index.wxss */
+.article-list {
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #ffffff;
+
+    .title {
+      font-weight: 500;
+    }
+
+    .new-gradient-anime {
+      border-radius: 8px;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-position: 0 0;
+      background-size: 600%;
+      background-image: linear-gradient(to right, #ffd143, #ff9153, #f14848, #556fff);
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-name: gradients;
+    }
+
+    @keyframes gradients {
+      0% {
+        background-position: 0 0;
+      }
+
+      25% {
+        background-position: 50% 0;
+      }
+
+      50% {
+        background-position: 90% 0;
+      }
+
+      60% {
+        background-position: 60%;
+      }
+
+      75% {
+        background-position: 40%;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+  }
+
+  .article-item {
+    margin-top: 20rpx;
+  }
+}

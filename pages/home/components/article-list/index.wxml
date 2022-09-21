@@ -1,0 +1,10 @@
+<!--pages/home/components/article-list/index.wxml-->
+<view class="article-list">
+	<view class="title-wrapper">
+		<custom-iconfont icon="icon-hot-fill" size="48rpx" external-iconfont="new-gradient-anime" />
+		<text class="title">最新文章</text>
+	</view>
+	<view class="article-item">
+		<custom-article wx:for="{{articleList}}" wx:key="id" articleInfo="{{item}}" />
+	</view>
+</view>

@@ -23,7 +23,7 @@ Component({
     showMenuByLongpress: Boolean,
     mode: {
       type: String,
-      value: "aspectFill",
+      value: 'aspectFill',
     },
     showError: {
       type: Boolean,
@@ -60,18 +60,18 @@ Component({
       this.setData({
         loading: false,
       });
-      this.triggerEvent("load", event.detail);
+      this.triggerEvent('load', event.detail);
     },
     onError(event) {
       this.setData({
         loading: false,
         error: true,
       });
-      this.triggerEvent("error", event.detail);
-      console.log("图片加载失败", event);
+      this.triggerEvent('error', event.detail);
+      console.error('========================👇 custom-image加载错误 👇========================\n\n', event, '\n\n');
     },
     onClick(event) {
-      this.triggerEvent("click", event.detail);
+      this.triggerEvent('click', event.detail);
     },
   },
 });

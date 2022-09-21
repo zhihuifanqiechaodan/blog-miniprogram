@@ -34,7 +34,7 @@ Page({
     ],
     banners: [], // 轮播图
     statisticsInfo: null, // 博客统计信息
-    articles: [], // 文章列表
+    articleList: [], // 文章列表
     title: '只会番茄炒蛋的博客', // 标题
   },
 
@@ -109,29 +109,13 @@ Page({
    * @method initData 初始化数据
    */
   async initData() {
-    const bannerInfo = await this.haloGetApiContentPosts({
-      page: 0,
-      sort: 'visits,desc',
-      size: 3,
-    });
-    const postsInfo = await this.haloGetApiContentPosts({
+    const { content } = await this.haloGetApiContentPosts({
       page: 0,
       sort: 'topPriority,createTime,desc',
       size: 10,
     });
     this.setData({
-      banners: bannerInfo.content,
-      articles: postsInfo.content,
-    });
-  },
-  /**
-   * @method swiperChange 轮播图切换
-   * @param {*} event
-   */
-  swiperChange(event) {
-    let { current } = event.detail;
-    this.setData({
-      currentIndex: current,
+      articleList: content,
     });
   },
 });
