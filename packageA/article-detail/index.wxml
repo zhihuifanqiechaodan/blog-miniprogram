@@ -1,5 +1,5 @@
 <!--packageA/article-detail/index.wxml-->
-<view class="app-container">
+<view class="app-container safe-area-inset-bottom">
 	<custom-nav-bar isBack="{{true}}" title="{{title}}" placeholder="{{true}}" customStyle="background: rgba(255, 255, 255, 1)" />
 	<view class="header">
 		<view class="article-title">{{articleInfo.title}}</view>

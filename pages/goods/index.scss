@@ -1,8 +1,18 @@
 /* pages/goods/index.wxss */
-.scroll-view {
-  padding-top: 20rpx;
+.van-tabs__wrap--scrollable .van-tab {
+  flex-basis: auto !important;
 }
 
 .van-tabs__line {
   background-color: #031c24 !important;
+}
+
+.tab-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: auto !important;
+  height: 44px !important;
+  padding: 0 20rpx !important;
+  font-weight: 300 !important;
 }

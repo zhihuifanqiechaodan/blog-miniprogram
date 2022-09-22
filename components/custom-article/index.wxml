@@ -1,4 +1,6 @@
 <!--components/custom-article/index.wxml-->
+<wxs src="/utils/wxs.wxs" module="computed" />
+
 <view catchtap="navigateToArticleDetail" class="custom-article">
 	<view class="title-row van-multi-ellipsis--l2 line-height--18">{{articleInfo.title}}</view>
 	<view class="content-box">
@@ -27,7 +29,7 @@
 			</view>
 		</view>
 		<view class="tags-list">
-			<text class="tags-item">{{articleInfo.tags[0].name}}</text>
+			<text wx:for="{{computed.slice({data: articleInfo.tags, length: 2})}}" class="tags-item">{{item.name}}</text>
 		</view>
 	</view>
 </view>

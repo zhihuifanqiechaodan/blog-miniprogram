@@ -13,7 +13,8 @@ Page({
    */
   _data: {
     refreshInfo: null, // 刷新详情
-  },
+	},
+	
   /**
    * 页面的初始数据
    */
@@ -66,7 +67,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+	onShareAppMessage: function () {},
+	
   /**
    * @method haloGetApiContentCategories 获取halo博客分类
    */
@@ -105,7 +107,8 @@ Page({
         });
       }
     });
-  },
+	},
+	
   /**
    * @method haloGetApiContentCategoriesPosts 获取halo博客分类文章列表
    */
@@ -128,7 +131,8 @@ Page({
       });
       reslove(response);
     });
-  },
+	},
+	
   /**
    * @method haloGetApiContentStatistics 获取halo博客文章
    */
@@ -149,7 +153,8 @@ Page({
       });
       reslove(response);
     });
-  },
+	},
+	
   /**
    * @method initData 初始化数据
    */
@@ -175,7 +180,8 @@ Page({
       [key2]: isLast,
     });
     Toast.clear();
-  },
+	},
+	
   /**
    * @method tabsChange 分类切换
    * @param {*} e
@@ -207,7 +213,8 @@ Page({
       });
       Toast.clear();
     }
-  },
+	},
+	
   /**
    * @method scrolltolower 滚动到底部
    */
@@ -234,7 +241,8 @@ Page({
       [key2]: isLast,
       [key4]: false,
     });
-  },
+	},
+	
   /**
    * @method refresherrefresh 下拉刷新
    */

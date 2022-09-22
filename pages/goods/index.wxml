@@ -1,18 +1,19 @@
 <!--pages/goods/index.wxml-->
 <view class="app-container">
-	<custom-nav-bar title="{{title}}" placeholder="{{true}}" customStyle="background: rgba(255, 255, 255, 1)" />
-	<van-tabs bind:change="tabsChange" active="{{currentTab}}" animated swipeable>
-		<van-tab wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:for-item="tabsItem" wx:key="id" title="{{tabsItem.name}}">
-			<scroll-view bindscrolltolower="scrolltolower" bindrefresherrefresh="refresherrefresh" scroll-y refresher-enabled refresher-triggered="{{tabs[currentTab].refresherTriggered}}" style="height: calc(100vh - {{ systemInfo.navbarHeight + 44 }}px)" class="scroll-view">
-				<block wx:for="{{tabs[currentTab].data}}" wx:for-index="articlesIndex" wx:for-item="articlesItem" wx:key="id">
-					<custom-article articleInfo="{{articlesItem}}" />
-				</block>
-				<custom-more wx:if="{{tabs[currentTab].lowerLoading}}" />
-				<custom-nomore wx:if="{{tabs[currentTab].nomore}}" />
-			</scroll-view>
-
-		</van-tab>
-	</van-tabs>
+  <custom-nav-bar title="{{title}}" placeholder="{{true}}" customStyle="background: rgba(255, 255, 255, 1)" />
+  <van-tabs bind:change="tabsChange" active="{{currentTab}}" animated swipeable 
+  tab-class="tab-class"
+  >
+    <van-tab wx:for="{{tabs}}" wx:for-index="tabsIndex" wx:for-item="tabsItem" wx:key="id" title="{{tabsItem.name}}">
+      <scroll-view bindscrolltolower="scrolltolower" bindrefresherrefresh="refresherrefresh" scroll-y refresher-enabled refresher-triggered="{{tabs[currentTab].refresherTriggered}}" style="height: calc(100vh - {{ systemInfo.navbarHeight + 44 }}px)" class="safe-area-inset-bottom">
+        <block wx:for="{{tabs[currentTab].data}}" wx:for-index="articlesIndex" wx:for-item="articlesItem" wx:key="id">
+          <custom-article articleInfo="{{articlesItem}}" />
+        </block>
+        <custom-more wx:if="{{tabs[currentTab].lowerLoading}}" />
+        <custom-nomore wx:if="{{tabs[currentTab].nomore}}" />
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
 
 </view>
 

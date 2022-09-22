@@ -1,7 +1,9 @@
 <!--pages/home/components/banner/index.wxml-->
+<wxs src="/utils/wxs.wxs" module="computed" />
+
 <view class="banner">
 	<swiper current="{{currentIndex}}" previous-margin="40rpx" next-margin="40rpx" bindchange="swiperChange" circular style="height: 320rpx;">
-		<swiper-item wx:for="{{articleList}}" wx:key="index" class="{{currentIndex === index ? 'swiper-item-active' : ''}}">
+		<swiper-item wx:for="{{computed.slice({data: articleList, length: 3})}}" wx:key="index" class="{{currentIndex === index ? 'swiper-item-active' : ''}}">
 			<custom-image radius="20rpx" src="{{item.thumbnail}}" width="{{currentIndex === index ? 'calc(100vw - 120rpx)' : 'calc(100vw - 80rpx)'}}" height="320rpx" mode="widthfix">
 			</custom-image>
 		</swiper-item>

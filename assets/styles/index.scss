@@ -3,13 +3,17 @@
 @import '/assets/styles/swiper.wxss';
 
 page {
-  padding-bottom: calc(env(safe-area-inset-bottom));
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC',
     'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   font-size: 28rpx;
   font-weight: 300;
   color: #031c24;
   background-color: #ffffff;
+}
+
+.safe-area-inset-bottom{
+  padding-bottom: calc(env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 view,
