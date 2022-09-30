@@ -83,8 +83,10 @@ Page({
           id
         );
         const { thumbnail, createTime } = response;
-        response.thumbnail = isExternal(thumbnail) ? thumbnail : haloBaseUrl + thumbnail;
         response.createTime = dayjs(createTime).format('YYYY-MM-DD');
+        if (thumbnail) {
+          response.thumbnail = isExternal(thumbnail) ? thumbnail : haloBaseUrl + thumbnail;
+        }
         reslove(response);
       } catch (error) {
         console.log(error);

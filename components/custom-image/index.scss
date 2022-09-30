@@ -1,7 +1,9 @@
 /* components/custom-image/index.wxss */
 .custom-image {
-  display: inline-block;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .custom-image--round {
   border-radius: 50%;

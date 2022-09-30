@@ -4,7 +4,12 @@
 }
 
 .van-tabs__line {
-  background-color: #031c24 !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  height: 1px !important;
+  bottom: 8px !important;
+  background-image: url('https://fabrique.oss-cn-qingdao.aliyuncs.com/fabrique-miniProgram/navbar-underline.png') !important;
+  background-size: 100% 100% !important;
 }
 
 .tab-class {
@@ -13,6 +18,6 @@
   justify-content: center;
   flex-basis: auto !important;
   height: 44px !important;
-  padding: 0 20rpx !important;
+  padding: 0 40rpx !important;
   font-weight: 300 !important;
 }

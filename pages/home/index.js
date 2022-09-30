@@ -96,7 +96,9 @@ Page({
         const { content } = response;
         content.forEach((item) => {
           item.createTime = dayjs(item.createTime).format('YYYY-MM-DD');
-          item.thumbnail = isExternal(item.thumbnail) ? item.thumbnail : haloBaseUrl + item.thumbnail;
+          if (item.thumbnail) {
+            item.thumbnail = isExternal(item.thumbnail) ? item.thumbnail : haloBaseUrl + item.thumbnail;
+          }
         });
         reslove(response);
       } catch (error) {

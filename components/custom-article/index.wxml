@@ -2,34 +2,34 @@
 <wxs src="/utils/wxs.wxs" module="computed" />
 
 <view catchtap="navigateToArticleDetail" class="custom-article">
-	<view class="title-row van-multi-ellipsis--l2 line-height--18">{{articleInfo.title}}</view>
-	<view class="content-box">
-		<view class="article-wrapper">
-			<view class="meta-container">
-				<text class="categorie">{{articleInfo.categories[0].name}}</text>
-				<view class="dividing" />
-				<text class="date van-ellipsis">{{articleInfo.createTime}}</text>
-			</view>
-			<view class="summary van-multi-ellipsis--l2">{{articleInfo.summary}}</view>
-		</view>
-		<view class="article-image">
-			<custom-image src="{{articleInfo.thumbnail}}" width="240rpx" height="140rpx" />
-		</view>
-	</view>
-	<view class="footer-box">
-		<view class="action-list">
-			<view class="action-item">
-				<custom-iconfont icon="icon-browse" size="32rpx" />
-				<text class="icon-desc">{{articleInfo.visits}}</text>
-			</view>
-			<view class="action-item">
-				<custom-iconfont icon="icon-comments" size="32rpx" />
-				<text wx:if="{{articleInfo.commentCount}}" class="icon-desc">{{articleInfo.commentCount}}</text>
-				<text wx:else class="icon-desc">评论</text>
-			</view>
-		</view>
-		<view class="tags-list">
-			<text wx:for="{{computed.slice({data: articleInfo.tags, length: 2})}}" class="tags-item">{{item.name}}</text>
-		</view>
-	</view>
+  <view class="title-row van-multi-ellipsis--l2 line-height--18">{{articleInfo.title}}</view>
+  <view class="content-box">
+    <view class="article-wrapper">
+      <view class="meta-container">
+        <text class="categorie">{{articleInfo.categories[0].name}}</text>
+        <view class="dividing" />
+        <text class="date van-ellipsis">{{articleInfo.createTime}}</text>
+      </view>
+      <view class="summary van-multi-ellipsis--l2">{{articleInfo.summary}}</view>
+    </view>
+    <view wx:if="{{articleInfo.thumbnail}}" class="article-image">
+      <custom-image src="{{articleInfo.thumbnail}}" width="240rpx" height="192rpx" />
+    </view>
+  </view>
+  <view class="footer-box">
+    <view class="action-list">
+      <view class="action-item">
+        <custom-iconfont icon="icon-browse" size="32rpx" />
+        <text class="icon-desc">{{articleInfo.visits}}</text>
+      </view>
+      <view class="action-item">
+        <custom-iconfont icon="icon-comments" size="32rpx" />
+        <text wx:if="{{articleInfo.commentCount}}" class="icon-desc">{{articleInfo.commentCount}}</text>
+        <text wx:else class="icon-desc">评论</text>
+      </view>
+    </view>
+    <view class="tags-list">
+      <text wx:for="{{computed.slice({data: articleInfo.tags || [], length: 2})}}" class="tags-item">{{item.name}}</text>
+    </view>
+  </view>
 </view>
