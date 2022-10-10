@@ -13,7 +13,7 @@
       <view class="summary van-multi-ellipsis--l2">{{articleInfo.summary}}</view>
     </view>
     <view wx:if="{{articleInfo.thumbnail}}" class="article-image">
-      <custom-image src="{{articleInfo.thumbnail}}" width="240rpx" height="192rpx" />
+      <custom-image src="{{articleInfo.thumbnail}}" width="240rpx" height="192rpx" mode="widthFix"/>
     </view>
   </view>
   <view class="footer-box">

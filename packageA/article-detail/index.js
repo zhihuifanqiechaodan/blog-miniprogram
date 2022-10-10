@@ -67,7 +67,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {},
+  onShareAppMessage: function () {
+    const { articleInfo } = this.data;
+    const { thumbnail, title } = articleInfo;
+    return {
+      title,
+      imageUrl: thumbnail,
+    };
+  },
   /**
    * @method haloGetApiContentStatistics 获取halo博客文章
    */
