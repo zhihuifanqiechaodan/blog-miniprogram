@@ -17,7 +17,7 @@
 			<!-- <view class="follow">+ 收藏</view> -->
 		</view>
 		<view class="article-hero">
-			<custom-image src="{{articleInfo.thumbnail}}" mode="widthFix" width="100%" height="50vw" />
+			<custom-image src="{{articleInfo.thumbnail}}" mode="widthFix" width="100%" height="calc((100% / 5) * 4)" />
 		</view>
 	</view>
 	<custom-html content="{{articleInfo.formatContent}}" />

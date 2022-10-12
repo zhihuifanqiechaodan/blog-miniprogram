@@ -75,6 +75,25 @@ Page({
       imageUrl: thumbnail,
     };
   },
+
+  /**
+   * 监听用户滑动页面事件
+   */
+  onPageScroll(e) {
+    const { scrollTop } = e;
+    const { title, articleInfo } = this.data;
+    if (scrollTop > 20 && !title) {
+      this.setData({
+        title: articleInfo.title,
+      });
+    }
+    if (scrollTop <= 20 && title) {
+      this.setData({
+        title: '',
+      });
+    }
+  },
+
   /**
    * @method haloGetApiContentStatistics 获取halo博客文章
    */
@@ -107,7 +126,6 @@ Page({
     const articleInfo = await this.haloGetApiContentPosts();
     this.setData({
       articleInfo,
-      title: articleInfo.title,
     });
   },
 });
