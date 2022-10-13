@@ -4,5 +4,9 @@
   style="width: {{systemInfo.screenWidth}}px; height: {{systemInfo.screenHeight}}px;"
   class="loading-wrapper {{loading ? '' : 'hide-loading'}}"
 >
-  <canvas id="canvas" type="2d" class="canvas"></canvas>
+  <div class="loader">
+    <div class="inner one"></div>
+    <div class="inner two"></div>
+    <div class="inner three"></div>
+  </div>
 </view>

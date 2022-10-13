@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import { haloBaseUrl } from '~/config/index';
 import { getUserInfo, isExternal } from '~/utils/util';
 import PostsService from '~/api/posts-service';
+import { Loading } from '~/components/custom-loading/loading';
 
 Page({
   /**
@@ -118,11 +119,17 @@ Page({
    * @method initData 初始化数据
    */
   async initData() {
+    Loading.show();
     const userInfo = await getUserInfo();
     const articleInfo = await this.haloGetApiContentPosts();
-    this.setData({
-      articleInfo,
-      userInfo,
-    });
+    this.setData(
+      {
+        articleInfo,
+        userInfo,
+      },
+      () => {
+        Loading.clear();
+      }
+    );
   },
 });

@@ -37,7 +37,7 @@ Loading.clear = function () {
     return Loading({
       loading: false,
     });
-  }, 1 * 1000);
+  }, 0.5 * 1000);
 };
 
 export { Loading };

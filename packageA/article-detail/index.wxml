@@ -1,26 +1,32 @@
 <!--packageA/article-detail/index.wxml-->
 <view class="app-container safe-area-inset-bottom">
-	<custom-nav-bar isBack="{{true}}" title="{{title}}" placeholder="{{true}}" customStyle="background: rgba(255, 255, 255, 1)" />
-	<view class="header">
-		<view class="article-title">{{articleInfo.title}}</view>
-		<view class="author-info-block">
-			<view class="avatar-link">
-				<custom-image src="{{userInfo.avatar}}" width="80rpx" height="80rpx" round="{{true}}" />
-			</view>
-			<view class="author-info-box">
-				<view class="author-name van-ellipsis">{{userInfo.nickname}}</view>
-				<view class="meta-box">
-					<text>{{userInfo.createTime}}</text>
-					<text> · 阅读 {{articleInfo.visits}}</text>
-				</view>
-			</view>
-			<!-- <view class="follow">+ 收藏</view> -->
-		</view>
-		<view class="article-hero">
-			<custom-image src="{{articleInfo.thumbnail}}" mode="widthFix" width="100%" height="calc((100% / 5) * 4)" />
-		</view>
-	</view>
-	<custom-html content="{{articleInfo.formatContent}}" />
+  <custom-nav-bar
+    isBack="{{true}}"
+    title="{{title}}"
+    placeholder="{{true}}"
+    customStyle="background: rgba(255, 255, 255, 1)"
+  />
+  <view class="header">
+    <view class="article-title">{{articleInfo.title}}</view>
+    <view class="author-info-block">
+      <view class="avatar-link">
+        <custom-image src="{{userInfo.avatar}}" width="80rpx" height="80rpx" round="{{true}}" />
+      </view>
+      <view class="author-info-box">
+        <view class="author-name van-ellipsis">{{userInfo.nickname}}</view>
+        <view class="meta-box">
+          <text>{{userInfo.createTime}}</text>
+          <text> · 阅读 {{articleInfo.visits}}</text>
+        </view>
+      </view>
+      <!-- <view class="follow">+ 收藏</view> -->
+    </view>
+    <view class="article-hero">
+      <custom-image src="{{articleInfo.thumbnail}}" mode="widthFix" width="100%" height="calc((100% / 5) * 4)" />
+    </view>
+  </view>
+  <custom-html content="{{articleInfo.formatContent}}" />
 </view>
 
 <van-toast id="van-toast" />
+<custom-loading id="custom-loading" />
