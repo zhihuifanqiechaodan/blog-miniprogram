@@ -22,3 +22,8 @@ export const User = {
   path: '/pages/user/index',
   name: '个人',
 };
+
+export const Guide = {
+  path: '/pages/guide/index',
+  name: '引导页',
+};
