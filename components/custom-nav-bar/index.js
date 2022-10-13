@@ -1,5 +1,5 @@
 // components/custom-navbar/custom-navbar.js
-import { navigateBack, reLaunch } from '~/utils/util';
+import { navigateBack, redirectTo } from '~/utils/util';
 import { Home, Goods, Message, User, Guide } from '~/utils/router';
 
 Component({
@@ -93,9 +93,7 @@ Component({
      * @method reLaunchHome 返回首页
      */
     reLaunchHome() {
-      reLaunch({
-        url: Home.path,
-      });
+      redirectTo({ url: Guide.path });
     },
   },
   lifetimes: {

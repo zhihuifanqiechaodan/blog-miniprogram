@@ -1,4 +1,4 @@
 <!--components/custom-more/index.wxml-->
 <view class="custom-more">
-    <van-loading color="#1989fa" size="48rpx" />
+  <van-loading color="#031c24" size="48rpx" />
 </view>

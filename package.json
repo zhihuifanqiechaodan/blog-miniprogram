@@ -31,7 +31,8 @@
   "dependencies": {
     "@vant/weapp": "^1.10.4",
     "dayjs": "^1.11.5",
-    "lottie-miniprogram": "^1.0.12"
+    "lottie-miniprogram": "^1.0.12",
+    "mp-html": "^2.4.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

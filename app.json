@@ -11,6 +11,7 @@
     "~/*": "/*"
   },
   "usingComponents": {
+    "mp-html": "mp-html",
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-toast": "@vant/weapp/toast/index",
     "van-loading": "@vant/weapp/loading/index",
