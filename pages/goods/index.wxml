@@ -11,13 +11,15 @@
         refresher-triggered="{{tabs[currentTab].refresherTriggered}}"
         style="height: calc(100vh - {{ systemInfo.navbarHeight + 44 }}px)"
       >
-        <custom-article
+        <view
           wx:for="{{tabs[currentTab].data}}"
           wx:for-index="articlesIndex"
           wx:for-item="articlesItem"
           wx:key="id"
-          articleInfo="{{articlesItem}}"
-        />
+          class="article-item"
+        >
+          <custom-article articleInfo="{{articlesItem}}" />
+        </view>
         <custom-more wx:if="{{tabs[currentTab].lowerLoading}}" />
         <custom-nomore wx:if="{{tabs[currentTab].nomore}}" />
       </scroll-view>

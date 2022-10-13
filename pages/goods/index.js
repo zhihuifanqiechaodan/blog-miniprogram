@@ -43,12 +43,16 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+    Loading.clear();
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () {
+    Loading.clear();
+  },
 
   /**
    * 生命周期函数--监听页面卸载
@@ -201,22 +205,19 @@ Page({
     });
     // 数据不存在，重新请求一次
     if (!data.length) {
-      Toast.loading({
-        message: '加载中...',
-        duration: 0,
-        forbidClick: true,
-      });
+      Loading.show();
       const articles = currentTab ? await this.haloGetApiContentCategoriesPosts() : await this.haloGetApiContentPosts();
       const { content, isEmpty, isLast } = articles;
-      const key = `tabs[${currentTab}].data`;
-      const key1 = `tabs[${currentTab}].empty`;
-      const key2 = `tabs[${currentTab}].nomore`;
-      this.setData({
-        [key]: content,
-        [key1]: isEmpty,
-        [key2]: isLast,
-      });
-      Toast.clear();
+      this.setData(
+        {
+          [`tabs[${currentTab}].data`]: content,
+          [`tabs[${currentTab}].empty`]: isEmpty,
+          [`tabs[${currentTab}].nomore`]: isLast,
+        },
+        () => {
+          Loading.clear();
+        }
+      );
     }
   },
 

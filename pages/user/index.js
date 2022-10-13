@@ -1,10 +1,4 @@
 // pages/user/index.js
-import Toast from '@vant/weapp/toast/toast';
-import dayjs from 'dayjs';
-import { haloBaseUrl } from '~/config/index';
-import { isExternal } from '~/utils/util';
-import UsersService from '~/api/users-service';
-import StatisticsService from '~/api/statistics-service';
 const { globalData } = getApp();
 
 Page({
@@ -19,14 +13,14 @@ Page({
    */
   data: {
     title: '账户信息',
-    userInfo: null, // 用户信息
+    userInfo: globalData.userInfo, // 用户信息
     brokenNetwork: false, // 网络状态
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     this.initData();
   },
 
@@ -66,69 +60,7 @@ Page({
   onShareAppMessage: function () {},
 
   /**
-   * @method haloGetApiContentUsersProfile 获取halo博客博主信息
-   */
-  haloGetApiContentUsersProfile() {
-    return new Promise(async (reslove, reject) => {
-      try {
-        const response = await UsersService.haloGetApiContentUsersProfile();
-
-        const { avatar, createTime } = response;
-        response.avatar = isExternal(avatar) ? avatar : haloBaseUrl + avatar;
-        response.createTime = dayjs(createTime).format('YYYY-MM-DD');
-        // 级别
-        response.level = '菜鸟';
-        // 单位
-        response.unit = '北京束一科技';
-        // 介绍
-        response.intro = '公众号「番茄学前端」作者';
-        globalData.userInfo = response;
-        reslove(response);
-      } catch (error) {
-        Toast.clear();
-        this._data._refreshInfo = {
-          method: 'initData',
-          params: {},
-        };
-        this.setData({
-          brokenNetwork: true,
-        });
-        console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
-      }
-    });
-  },
-
-  /**
-   * @method haloGetApiContentStatistics 获取halo博客统计信息
-   */
-  haloGetApiContentStatistics() {
-    return new Promise(async (reslove, reject) => {
-      try {
-        const response = await StatisticsService.haloGetApiContentStatistics();
-        reslove(response);
-      } catch (error) {
-        Toast.clear();
-        this._data._refreshInfo = {
-          method: 'initData',
-          params: {},
-        };
-        this.setData({
-          brokenNetwork: true,
-        });
-        console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
-      }
-    });
-  },
-
-  /**
    * @method initData 初始化数据
    */
-  async initData() {
-    const userInfo = await this.haloGetApiContentUsersProfile();
-    const statisticsInfo = await this.haloGetApiContentStatistics();
-    this.setData({
-      userInfo,
-      statisticsInfo,
-    });
-  },
+  async initData() {},
 });

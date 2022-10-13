@@ -1,4 +1,22 @@
 /* pages/goods/index.wxss */
+.app-container {
+  min-height: 100vh;
+  background-color: #f7f7f8;
+
+  .tab-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: auto !important;
+    height: 44px !important;
+    padding: 0 20rpx !important;
+    font-weight: 300 !important;
+  }
+
+  .article-item {
+    margin-bottom: 20rpx;
+  }
+}
 .van-tabs__wrap--scrollable .van-tab {
   flex-basis: auto !important;
 }
@@ -10,14 +28,4 @@
   bottom: 8px !important;
   background-image: url('https://fabrique.oss-cn-qingdao.aliyuncs.com/fabrique-miniProgram/navbar-underline.png') !important;
   background-size: 100% 100% !important;
-}
-
-.tab-class {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: auto !important;
-  height: 44px !important;
-  padding: 0 20rpx !important;
-  font-weight: 300 !important;
 }

@@ -6,9 +6,12 @@
     title="{{title}}"
     customStyle="background: rgba(255, 255, 255, 1)"
   />
-  <my-welcome />
-  <my-banner articleList="{{articleList}}" />
-  <my-article-list articleList="{{articleList}}" />
+  <block wx:if="{{articleList.length}}">
+    <my-welcome />
+    <my-banner articleList="{{articleList}}" />
+    <my-article-list articleList="{{articleList}}" />
+    <custom-nomore />
+  </block>
 </view>
 
 <van-toast id="van-toast" />

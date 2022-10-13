@@ -14,15 +14,15 @@
     </view>
     <view class="stat-action">
       <view class="stat-item">
-        <view class="count">{{statisticsInfo.visitCount}}</view>
+        <view class="count">{{userInfo.visitCount}}</view>
         <view class="desc">访问</view>
       </view>
       <view class="stat-item">
-        <view class="count">{{statisticsInfo.postCount}}</view>
+        <view class="count">{{userInfo.postCount}}</view>
         <view class="desc">文章</view>
       </view>
       <view class="stat-item">
-        <view class="count">{{statisticsInfo.categoryCount}}</view>
+        <view class="count">{{userInfo.categoryCount}}</view>
         <view class="desc">分类</view>
       </view>
     </view>
