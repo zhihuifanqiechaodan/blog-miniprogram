@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont'; /* Project id 3142211 */
-  src: url('//at.alicdn.com/t/font_3142211_z6usvoasnzr.woff2?t=1642435665090') format('woff2'),
-    url('//at.alicdn.com/t/font_3142211_z6usvoasnzr.woff?t=1642435665090') format('woff'),
-    url('//at.alicdn.com/t/font_3142211_z6usvoasnzr.ttf?t=1642435665090') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3142211_mt0253tgcq.woff2?t=1665648966450') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3142211_mt0253tgcq.woff?t=1665648966450') format('woff'),
+    url('//at.alicdn.com/t/c/font_3142211_mt0253tgcq.ttf?t=1665648966450') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caret-right:before {
+  content: '\e8ec';
 }
 
 .icon-hot-fill:before {
@@ -23,14 +27,6 @@
 
 .icon-leftalignment:before {
   content: '\e7cf';
-}
-
-.icon-account-fill:before {
-  content: '\e7aa';
-}
-
-.icon-account:before {
-  content: '\e7b2';
 }
 
 .icon-comments:before {

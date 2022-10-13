@@ -2,6 +2,5 @@
 <wxs src="/utils/wxs.wxs" module="computed" />
 
 <view class="custom-iconfot">
-	<view class="iconfont {{icon}} external-iconfont" style="font-size: {{computed.addUnit(size)}};" />
+  <view class="iconfont {{icon}} external-iconfont" style="font-size: {{computed.addUnit(size)}}; color: {{color}};" />
 </view>
-

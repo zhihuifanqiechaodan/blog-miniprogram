@@ -48,5 +48,13 @@
     background-color: transparent;
     color: #031c24;
     transform: translateX(-50%);
+
+    .explore-button-solt {
+      display: flex;
+      align-items: center;
+      .icon-caret-right {
+        color: #ffffff;
+      }
+    }
   }
 }

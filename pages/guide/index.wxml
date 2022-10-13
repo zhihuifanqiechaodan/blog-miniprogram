@@ -9,5 +9,10 @@
     </van-button>
   </custom-nav-bar>
   <canvas id="canvas" type="2d"></canvas>
-  <van-button bind:click="reLaunchHome" type="primary" custom-class="explore-button">即可探索</van-button>
+  <van-button bind:click="reLaunchHome" type="primary" custom-class="explore-button">
+    <view class="explore-button-solt">
+      <text>即可探索</text>
+      <custom-iconfont icon="icon-caret-right" size="24rpx" />
+    </view>
+  </van-button>
 </view>

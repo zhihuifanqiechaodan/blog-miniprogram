@@ -1,14 +1,21 @@
 // components/custom-iconfont/index.js
 Component({
-  externalClasses: ["external-iconfont"],
+  externalClasses: ['external-iconfont'],
   /**
    * 组件的属性列表
    */
   properties: {
-    size: null,
+    size: {
+      optionalTypes: [String, Number],
+      value: '28rpx',
+    },
     icon: {
       type: String,
-      value: "",
+      value: '',
+    },
+    color: {
+      type: String,
+      value: '#031c24',
     },
   },
 
