@@ -1,7 +1,10 @@
 // app.js
-import { env, log } from '~/config/index';
+import dayjs from 'dayjs';
+import { env, haloBaseUrl, log } from '~/config/index';
 import { Home } from './utils/router';
-import { reLaunch } from './utils/util';
+import { isExternal, reLaunch } from './utils/util';
+import StatisticsService from '~/api/statistics-service';
+import UsersService from '~/api/users-service';
 
 App({
   onLaunch() {
@@ -69,8 +72,10 @@ App({
       log && console.log('========================👇 onMemoryWarningReceive 👇========================\n\n');
     });
 
-    wx.nextTick(() => {
-      // 执行一些初始化完成的请求
+    wx.nextTick(async () => {
+      const userInfo = await this.haloGetApiContentUsersProfile();
+      const statisticsInfo = await this.haloGetApiContentStatistics();
+      this.globalData.userInfo = Object.assign(userInfo, statisticsInfo);
     });
   },
 
@@ -80,6 +85,43 @@ App({
   onPageNotFound() {
     reLaunch({
       url: Home.path,
+    });
+  },
+
+  /**
+   * @method haloGetApiContentUsersProfile 获取halo博客博主信息
+   */
+  haloGetApiContentUsersProfile() {
+    return new Promise(async (reslove) => {
+      try {
+        const response = await UsersService.haloGetApiContentUsersProfile();
+        const { avatar, createTime } = response;
+        response.avatar = isExternal(avatar) ? avatar : haloBaseUrl + avatar;
+        response.createTime = dayjs(createTime).format('YYYY-MM-DD');
+        // 级别
+        response.level = '菜鸟';
+        // 单位
+        response.unit = '北京束一科技';
+        // 介绍
+        response.intro = '公众号「番茄学前端」作者';
+        reslove(response);
+      } catch (error) {
+        console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
+      }
+    });
+  },
+
+  /**
+   * @method haloGetApiContentStatistics 获取halo博客统计信息
+   */
+  haloGetApiContentStatistics() {
+    return new Promise(async (reslove) => {
+      try {
+        const response = await StatisticsService.haloGetApiContentStatistics();
+        reslove(response);
+      } catch (error) {
+        console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
+      }
     });
   },
 
