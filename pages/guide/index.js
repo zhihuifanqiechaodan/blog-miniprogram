@@ -90,6 +90,7 @@ Page({
    * @method countDownFinish 倒计时结束处罚
    */
   countDownFinish() {
+    this.countDownPause();
     reLaunch({ url: Home.path });
   },
 
@@ -97,6 +98,15 @@ Page({
    * @method reLaunchHome 跳转首页
    */
   reLaunchHome() {
+    this.countDownPause();
     reLaunch({ url: Home.path });
+  },
+
+  /**
+   * @method countDownPause 倒计时暂停
+   */
+  countDownPause() {
+    const countDown = this.selectComponent('.control-count-down');
+    countDown.pause();
   },
 });
