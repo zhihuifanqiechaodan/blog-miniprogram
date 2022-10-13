@@ -25,7 +25,8 @@
     "custom-article": "/components/custom-article/index",
     "custom-nomore": "/components/custom-nomore/index",
     "custom-more": "/components/custom-more/index",
-    "custom-html": "/components/custom-html/index"
+    "custom-html": "/components/custom-html/index",
+    "custom-loading": "/components/custom-loading/index"
   },
   "sitemapLocation": "sitemap.json",
   "pages": ["pages/guide/index", "pages/home/index", "pages/goods/index", "pages/user/index", "pages/message/index"],

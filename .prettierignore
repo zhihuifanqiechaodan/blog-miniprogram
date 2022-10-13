@@ -6,5 +6,6 @@ yarn.lock
 pnpm-lock.yaml
 project.private.config.json
 project.config.json
+assets/lotties
 
 # 业务代码

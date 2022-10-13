@@ -15,7 +15,7 @@ Component({
     },
     color: {
       type: String,
-      value: '#031c24',
+      value: '',
     },
   },
 

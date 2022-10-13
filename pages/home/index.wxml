@@ -1,9 +1,15 @@
 <!--pages/home/index.wxml-->
 <view class="app-container">
-	<custom-nav-bar isSlot="{{true}}" placeholder="{{true}}" title="{{title}}" customStyle="background: rgba(255, 255, 255, 1)" />
-	<my-welcome />
-	<my-banner articleList="{{articleList}}" />
-	<my-article-list articleList="{{articleList}}" />
+  <custom-nav-bar
+    isSlot="{{true}}"
+    placeholder="{{true}}"
+    title="{{title}}"
+    customStyle="background: rgba(255, 255, 255, 1)"
+  />
+  <my-welcome />
+  <my-banner articleList="{{articleList}}" />
+  <my-article-list articleList="{{articleList}}" />
 </view>
 
 <van-toast id="van-toast" />
+<custom-loading id="custom-loading" />

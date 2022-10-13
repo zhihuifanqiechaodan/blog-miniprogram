@@ -71,7 +71,6 @@ Page({
         this._data._loadAnimationInstance = lottie.loadAnimation({
           loop: true,
           autoplay: true,
-          // animationData: require('~/assets/lotties/122792-seo-consulting'),
           animationData: require('~/assets/lotties/122812-death'),
           rendererSettings: {
             context,

@@ -1,5 +1,6 @@
 // pages/home/index.js
 import dayjs from 'dayjs';
+import { Loading } from '~/components/custom-loading/loading.js';
 import { haloBaseUrl } from '~/config/index';
 import { isExternal } from '~/utils/util';
 import PostsService from '~/api/posts-service';
@@ -41,7 +42,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     this.initData();
   },
 
@@ -85,7 +86,7 @@ Page({
    * @param {*} params
    */
   haloGetApiContentPosts(params) {
-    return new Promise(async (reslove, reject) => {
+    return new Promise(async (reslove) => {
       try {
         const { page, sort, size } = params;
         const response = await PostsService.haloGetApiContentPosts({
@@ -111,13 +112,19 @@ Page({
    * @method initData 初始化数据
    */
   async initData() {
+    Loading.show();
     const { content } = await this.haloGetApiContentPosts({
       page: 0,
       sort: 'topPriority,createTime,desc',
       size: 10,
     });
-    this.setData({
-      articleList: content,
-    });
+    this.setData(
+      {
+        articleList: content,
+      },
+      () => {
+        Loading.clear();
+      }
+    );
   },
 });

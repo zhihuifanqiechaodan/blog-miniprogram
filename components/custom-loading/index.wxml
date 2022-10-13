@@ -1,0 +1,8 @@
+<!--components/custom-loading/custom-loading.wxml-->
+<view
+  catchtouchmove="noop"
+  style="width: {{systemInfo.screenWidth}}px; height: {{systemInfo.screenHeight}}px;"
+  class="loading-wrapper {{loading ? '' : 'hide-loading'}}"
+>
+  <canvas id="canvas" type="2d" class="canvas"></canvas>
+</view>

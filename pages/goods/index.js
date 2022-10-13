@@ -5,6 +5,7 @@ import { haloBaseUrl } from '~/config/index';
 import { isExternal } from '~/utils/util';
 import PostsService from '~/api/posts-service';
 import CategoriesService from '~/api/categories-service';
+import { Loading } from '~/components/custom-loading/loading';
 const { systemInfo } = getApp();
 
 Page({
@@ -30,7 +31,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     this.initData();
   },
 
@@ -73,7 +74,7 @@ Page({
    * @method haloGetApiContentCategories 获取halo博客分类
    */
   haloGetApiContentCategories() {
-    return new Promise(async (reslove, reject) => {
+    return new Promise(async (reslove) => {
       try {
         const categories = await CategoriesService.haloGetApiContentCategories();
         const tabs = categories.map((item) => {
@@ -113,7 +114,7 @@ Page({
    * @method haloGetApiContentCategoriesPosts 获取halo博客分类文章列表
    */
   haloGetApiContentCategoriesPosts() {
-    return new Promise(async (reslove, reject) => {
+    return new Promise(async (reslove) => {
       const { currentTab, tabs } = this.data;
       const tabInfo = tabs[currentTab];
       const { slug, page, size } = tabInfo;
@@ -139,7 +140,7 @@ Page({
    * @method haloGetApiContentStatistics 获取halo博客文章
    */
   haloGetApiContentPosts() {
-    return new Promise(async (reslove, reject) => {
+    return new Promise(async (reslove) => {
       const { currentTab, tabs } = this.data;
       const tabsInfo = tabs[currentTab];
       const { page, size } = tabsInfo;
@@ -163,11 +164,7 @@ Page({
    * @method initData 初始化数据
    */
   async initData() {
-    Toast.loading({
-      message: '加载中...',
-      duration: 0,
-      forbidClick: true,
-    });
+    Loading.show();
     const { currentTab } = this.data;
     const tabs = await this.haloGetApiContentCategories();
     this.setData({
@@ -178,12 +175,16 @@ Page({
     const key = `tabs[${currentTab}].data`;
     const key1 = `tabs[${currentTab}].empty`;
     const key2 = `tabs[${currentTab}].nomore`;
-    this.setData({
-      [key]: content,
-      [key1]: isEmpty,
-      [key2]: isLast,
-    });
-    Toast.clear();
+    this.setData(
+      {
+        [key]: content,
+        [key1]: isEmpty,
+        [key2]: isLast,
+      },
+      () => {
+        Loading.clear();
+      }
+    );
   },
 
   /**
