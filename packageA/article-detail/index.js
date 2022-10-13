@@ -1,9 +1,8 @@
 // packageA/article-detail/index.js
 import dayjs from 'dayjs';
 import { haloBaseUrl } from '~/config/index';
-import { isExternal } from '~/utils/util';
+import { getUserInfo, isExternal } from '~/utils/util';
 import PostsService from '~/api/posts-service';
-const { globalData } = getApp();
 
 Page({
   /**
@@ -26,11 +25,7 @@ Page({
    */
   onLoad: function (options) {
     const { id } = options;
-    const { userInfo } = globalData;
     this._data.id = id;
-    this.setData({
-      userInfo,
-    });
     this.initData();
   },
 
@@ -98,7 +93,7 @@ Page({
    * @method haloGetApiContentStatistics 获取halo博客文章
    */
   haloGetApiContentPosts() {
-    return new Promise(async (reslove, reject) => {
+    return new Promise(async (reslove) => {
       try {
         const { id } = this._data;
         const response = await PostsService.haloGetApiContentPosts(
@@ -123,9 +118,11 @@ Page({
    * @method initData 初始化数据
    */
   async initData() {
+    const userInfo = await getUserInfo();
     const articleInfo = await this.haloGetApiContentPosts();
     this.setData({
       articleInfo,
+      userInfo,
     });
   },
 });

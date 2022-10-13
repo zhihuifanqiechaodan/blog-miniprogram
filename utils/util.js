@@ -1,5 +1,45 @@
 import Toast from '@vant/weapp/toast/toast';
-import { Home } from '~/utils/router';
+import StatisticsService from '~/api/statistics-service';
+import UsersService from '~/api/users-service';
+import dayjs from 'dayjs';
+import { haloBaseUrl } from '~/config/index';
+
+/**
+ * @method haloGetApiContentUsersProfile 获取halo博客博主信息
+ */
+const _haloGetApiContentUsersProfile = () => {
+  return new Promise(async (reslove) => {
+    try {
+      const response = await UsersService.haloGetApiContentUsersProfile();
+      const { avatar, createTime } = response;
+      response.avatar = isExternal(avatar) ? avatar : haloBaseUrl + avatar;
+      response.createTime = dayjs(createTime).format('YYYY-MM-DD');
+      // 级别
+      response.level = '菜鸟';
+      // 单位
+      response.unit = '北京束一科技';
+      // 介绍
+      response.intro = '公众号「番茄学前端」作者';
+      reslove(response);
+    } catch (error) {
+      console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
+    }
+  });
+};
+
+/**
+ * @method haloGetApiContentStatistics 获取halo博客统计信息
+ */
+const _haloGetApiContentStatistics = () => {
+  return new Promise(async (reslove) => {
+    try {
+      const response = await StatisticsService.haloGetApiContentStatistics();
+      reslove(response);
+    } catch (error) {
+      console.error('========================👇 请求错误 👇========================\n\n', error, '\n\n');
+    }
+  });
+};
 
 /**
  * @method getItemSync 缓存读取
@@ -222,4 +262,20 @@ export const getNetworkType = () => {
  */
 export const isExternal = (path) => {
   return /^(https?:|mailto:|tel:)/.test(path);
+};
+
+/**
+ * @method getUserInfo 获取用户信息
+ */
+export const getUserInfo = async () => {
+  const { globalData } = getApp();
+  const { userInfo } = globalData;
+  if (userInfo) {
+    return userInfo;
+  } else {
+    const userInfo = await _haloGetApiContentUsersProfile();
+    const statisticsInfo = _haloGetApiContentStatistics();
+    globalData.userInfo = Object.assign(userInfo, statisticsInfo);
+    return globalData.userInfo;
+  }
 };
