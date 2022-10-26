@@ -1,5 +1,5 @@
 // components/custom-html/index.js
-import { haloBaseUrl } from "../../config/index.js";
+import { haloBaseUrl } from '~/config/index.js';
 Component({
   /**
    * 组件的属性列表
@@ -15,9 +15,9 @@ Component({
     containerStyle: {}, // 设置容器的样式
     copyLink: true, // 是否允许外部链接被点击时自动复制
     domain: haloBaseUrl, // 主域名（用于链接拼接）
-    errorImg: "", // 图片出错时的占位图链接
+    errorImg: '', // 图片出错时的占位图链接
     lazyLoad: true, // 是否开启图片懒加载
-    loadingImg: "", // 图片加载过程中的占位图链接
+    loadingImg: '', // 图片加载过程中的占位图链接
     pauseVideo: true, // 是否在播放一个视频时自动暂停其他视频
     previewImg: true, // 是否允许图片被点击时自动预览
     scrollTable: true, // 是否给每个表格添加一个滚动层使其能单独横向滚动
@@ -139,7 +139,7 @@ Component({
             margin: 0;
             word-break: normal;
             display: block;
-            overflow-x: auto;
+						overflow-x: auto;
           `,
           strong: `
             font-weight: bolder;
@@ -152,7 +152,7 @@ Component({
           `,
           text: `
             line-height: normal;
-          `
+          `,
         },
       });
     },

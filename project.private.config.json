@@ -29,6 +29,13 @@
 					"query": "id=53",
 					"launchMode": "default",
 					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "packageA/article-detail/index",
+					"query": "id=53",
+					"launchMode": "default",
+					"scene": null
 				}
 			]
 		}

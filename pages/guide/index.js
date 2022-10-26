@@ -85,7 +85,7 @@ Page({
    */
   countDownFinish() {
     this.countDownPause();
-    // reLaunch({ url: Home.path });
+    reLaunch({ url: Home.path });
   },
 
   /**
